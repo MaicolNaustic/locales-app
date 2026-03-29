@@ -1,67 +1,41 @@
-Gestión de Locales Comerciales
-Descripción del Proyecto
+# Gestión de Locales Comerciales - Prueba Técnica Full Stack
 
-Sistema de gestión básica de locales comerciales desarrollado como prueba técnica full stack utilizando Laravel 12 para el backend y frontend web, y preparado para consumir la misma API desde una aplicación móvil en Flutter.
+## Descripción
+Proyecto desarrollado como **prueba técnica** que consiste en un sistema de gestión de locales comerciales utilizando **Laravel 12** (Backend + Frontend Web) y preparado para **Flutter** (Cliente Móvil).
 
-Requerimientos Cumplidos
-API REST: GET /api/locales y PUT /api/locales/{id}
-Frontend Web: Interfaz en Blade que consume la API
-Base de datos: 12 locales de prueba con todos los campos requeridos
-Actualización: Modal interactivo para editar locales
-Sin autenticación (como se solicitó)
-Tecnologías Utilizadas
-Backend: Laravel 12 (PHP 8.2)
-Base de datos: SQLite
-Frontend: Blade + Bootstrap 5 + JavaScript (Fetch API)
-Estilo: Bootstrap 5 + Font Awesome
-Estructura del Proyecto
+Se cumple con los requerimientos solicitados:
+- API REST (`GET /api/locales` y `PUT /api/locales/{id}`)
+- Frontend Web en Blade que consume la API
+- Edición de locales mediante modal
+- 12 locales de prueba mediante seeder
 
-locales-app/
-├── app/
-│ ├── Models/Local.php
-│ └── Http/Controllers/
-│ ├── LocalController.php
-│ └── Api/LocalApiController.php
-├── routes/
-│ ├── web.php
-│ └── api.php
-├── resources/views/
-│ ├── layout.blade.php
-│ └── locales/
-│ └── index.blade.php
-├── database/seeders/LocalSeeder.php
-└── README.md
+## Tecnologías utilizadas
 
-Instalación y Ejecución
-Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
+**Backend & Web:**
+- Laravel 12
+- PHP 8.2
+- Blade + Bootstrap 5
+- SQLite
+
+**Móvil:**
+- Flutter + Dart
+
+## Instalación (Laravel)
+
+```bash
+# Clonar repositorio
+git clone https://github.com/MaicolNaustic/locales-app.git
 cd locales-app
-Instalar dependencias
+
+# Instalar dependencias
 composer install
-Configurar archivo de entorno
+
+# Configurar entorno
 cp .env.example .env
 php artisan key:generate
-Ejecutar migraciones y cargar datos de prueba
+
+# Migraciones + datos de prueba
 php artisan migrate:fresh --seed
-Iniciar el servidor
+
+# Iniciar servidor
 php artisan serve
-Accede a la aplicación en: http://127.0.0.1:8000/locales
-Funcionalidades Implementadas
-Backend API
-GET /api/locales → Listado completo de locales
-PUT /api/locales/{id} → Actualización de local
-Frontend Web
-Listado de locales consumiendo la API
-Edición mediante modal (experiencia moderna)
-Diseño responsive
-Indicadores visuales de estado (Activo/Inactivo)
-Datos de Prueba
-12 locales comerciales de prueba
-Incluye locales activos e inactivos
-Campos completos según especificación
-Decisiones de Desarrollo
-Separación clara entre API y Frontend Web
-Uso de fetch API para comunicación con el backend
-Modal para edición sin recargar la página
-Sistema de respaldo en caso de fallo de la API
-Código comentado y organizado para facilitar la revisión
